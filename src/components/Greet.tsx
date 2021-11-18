@@ -1,15 +1,18 @@
-interface GreetInterface {
+// Membuat interface untuk string, number, dan boolean
+interface GreetProps {
   name: string;
   age: number;
+  isLoggedIn: boolean;
 }
 
-export const Greet = (props: GreetInterface) => {
-  const { name, age } = props;
+export const Greet = (props: GreetProps) => {
+  const { name, age, isLoggedIn } = props;
 
   return (
-    <div>
+    <div className="border">
       <h2>
-        Halo nama saya {name}, usia saya {age}
+        {name}, berusia {age} tahun. Anda{" "}
+        {isLoggedIn ? "sudah Login." : "belum Login."}
       </h2>
     </div>
   );
