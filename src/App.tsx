@@ -1,12 +1,12 @@
 import "./App.css";
 // import Props from "./components/props";
-import { LoggedIn } from "./components/useState/LoggedIn";
+import UseState from "./components/useState";
 
 function App() {
   return (
     <div className='App'>
       {/* <Props /> */}
-      <LoggedIn />
+      <UseState />
     </div>
   );
 }
