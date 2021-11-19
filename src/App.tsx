@@ -1,4 +1,6 @@
+import { useState } from "react";
 import "./App.css";
+import { Event } from "./components/Event";
 import { Greet } from "./components/Greet";
 import { Heading } from "./components/Heading";
 import { Optional } from "./components/Optional";
@@ -8,6 +10,8 @@ import { PersonList } from "./components/PersonList";
 import { Status } from "./components/Status";
 
 function App() {
+  const [input, setInput] = useState("");
+
   const personName = {
     firstName: "Andry",
     lastName: "Pebrianto",
@@ -33,22 +37,34 @@ function App() {
 
   return (
     <div className='App'>
-      {/* Penggunaan props dasar */}
+      {/* Props string, number, boolean */}
       <Greet name='Andry Pebrianto' age={18} isLoggedIn={false} />
-      {/* Penggunaan props object */}
+      {/* Props object */}
       <Person name={personName} />
-      {/* Penggunaan props array of object */}
+      {/* Props array of object */}
       <PersonList personListData={personList} />
-      {/* Penggunaan props union */}
+      {/* Props onion */}
       <Status status='success' />
-      {/* Penggunaan props children bertipe string */}
+      {/* Props children bertipe string */}
       <Heading>Placeholder Text</Heading>
-      {/* Penggunaan props children bertipe react component */}
+      {/* Props children bertipe react component */}
       <Oscar>
         <Heading>Heading ada di dalam Oscar</Heading>
       </Oscar>
-      {/* Penggunaan props optional */}
+      {/* Props optional */}
       <Optional />
+      {/* Props function/event handler */}
+      <Event
+        handleIncrement={(e, id) => {
+          console.log("Onclick - " + id);
+          console.log(e.target);
+        }}
+        handleChange={(e) => {
+          setInput(e.target.value);
+          console.log(input);
+        }}
+        inputValue={input}
+      />
     </div>
   );
 }
