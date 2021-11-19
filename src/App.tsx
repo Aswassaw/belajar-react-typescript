@@ -8,6 +8,7 @@ import { Oscar } from "./components/Oscar";
 import { Person } from "./components/Person";
 import { PersonList } from "./components/PersonList";
 import { Status } from "./components/Status";
+import { Style } from "./components/Style";
 
 function App() {
   const [input, setInput] = useState("");
@@ -39,20 +40,27 @@ function App() {
     <div className='App'>
       {/* Props string, number, boolean */}
       <Greet name='Andry Pebrianto' age={18} isLoggedIn={false} />
+
       {/* Props object */}
       <Person name={personName} />
+
       {/* Props array of object */}
       <PersonList personListData={personList} />
+
       {/* Props onion */}
       <Status status='success' />
+
       {/* Props children bertipe string */}
       <Heading>Placeholder Text</Heading>
+
       {/* Props children bertipe react component */}
       <Oscar>
         <Heading>Heading ada di dalam Oscar</Heading>
       </Oscar>
+
       {/* Props optional */}
       <Optional />
+
       {/* Props function/event handler */}
       <Event
         handleIncrement={(e, id) => {
@@ -65,6 +73,9 @@ function App() {
         }}
         inputValue={input}
       />
+
+      {/* Props style/css properties */}
+      <Style styles={{ color: "red", backgroundColor: "skyblue" }} />
     </div>
   );
 }
