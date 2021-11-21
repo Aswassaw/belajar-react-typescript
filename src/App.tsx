@@ -2,7 +2,8 @@ import "./App.css";
 // import Props from "./components/props";
 // import UseState from "./components/useState";
 // import UseReducer from "./components/useReducer";
-import UseContext from "./components/useContext";
+// import UseContext from "./components/useContext";
+import UseRef from "./components/useRef";
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       {/* <Props /> */}
       {/* <UseState /> */}
       {/* <UseReducer /> */}
-      <UseContext />
+      {/* <UseContext /> */}
+      <UseRef />
     </div>
   );
 }
